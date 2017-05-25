@@ -6,10 +6,10 @@ namespace Sikim.Qi.Tests
 {
     public class ApplicationTest
     {
-        [Fact]
+        
+        //[Fact]
         public void ShouldCreateNewApplication()
         {
-            Console.WriteLine(Environment.GetEnvironmentVariable("PATH").ToString());
             var application = new Application(new string[]{});
         }
     }

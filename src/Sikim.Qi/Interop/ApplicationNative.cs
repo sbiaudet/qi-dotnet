@@ -1,9 +1,10 @@
+using Sikim.Qi.Interop.SafeHandles;
 using System;
 using System.Runtime.InteropServices;
 
 namespace Sikim.Qi.Interop
 {
-    internal static class ApplicationNative
+    internal  static class ApplicationNative
     {
 
         [DllImport(Libraries.LibQi, CallingConvention = CallingConvention.Cdecl, EntryPoint = "qi_application_create")]
@@ -16,9 +17,9 @@ namespace Sikim.Qi.Interop
         internal static extern void Destroy(IntPtr app);
 
         [DllImport(Libraries.LibQi, CallingConvention = CallingConvention.Cdecl, EntryPoint = "qi_application_run")]
-        internal static extern void Run(IntPtr app);
+        internal static extern void Run(ApplicationSafeHandle app);
 
         [DllImport(Libraries.LibQi, CallingConvention = CallingConvention.Cdecl, EntryPoint = "qi_application_stop")]
-        internal static extern void Stop(IntPtr app);
+        internal static extern void Stop(ApplicationSafeHandle app);
     }
 }
